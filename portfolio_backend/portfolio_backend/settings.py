@@ -58,7 +58,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:3000",  # React frontend
+    "http://127.0.0.1:3000",  "https://personal-website-sigma-nine-31.vercel.app/"
 ]
 
 
