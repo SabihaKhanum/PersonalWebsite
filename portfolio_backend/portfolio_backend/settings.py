@@ -27,7 +27,8 @@ SECRET_KEY = "django-insecure-6h&6rzbf)jn!d3(9j_^swk7-7pgnmlw(2@$rj(-2y77_)5vx(q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['personalwebsite-5dbi.onrender.com', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
@@ -57,7 +58,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:3000",  # React frontend
+    "http://127.0.0.1:3000",  "https://personal-website-sigma-nine-31.vercel.app/"
 ]
 
 
@@ -144,6 +145,3 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-
-
