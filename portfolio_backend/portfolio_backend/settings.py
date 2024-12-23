@@ -16,7 +16,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 import os
 
-
+PORT = int(os.environ.get('PORT', 8000))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -58,7 +58,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:3000",  "https://personal-website-sigma-nine-31.vercel.app/"
+    "http://127.0.0.1:3000",  "https://personal-website-sigma-nine-31.vercel.app"
 ]
 
 
