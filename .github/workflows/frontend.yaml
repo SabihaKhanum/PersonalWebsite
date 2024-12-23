@@ -1,0 +1,32 @@
+name: Frontend Build and Deploy (React)
+
+on:
+  push:
+    branches:
+      - main  # Trigger this workflow on pushes to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build React app
+        run: npm run build
+
+      - name: Deploy to Netlify (example)
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          curl -sL https://github.com/netlify/cli/releases/download/v3.0.0/netlify-linux-x64.tar.gz | tar xz
+          ./netlify deploy --dir=build --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN
